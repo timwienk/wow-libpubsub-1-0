@@ -4,8 +4,9 @@ local LibPubSub = LibStub:NewLibrary('LibPubSub-1.0', 1)
 if not LibPubSub then return end
 
 -- Localise global functions
-local assert, geterrorhandler, xpcall = assert, geterrorhandler, xpcall
-local type, pairs, unpack, insert, remove = type, pairs, unpack, table.insert, table.remove
+local _G = _G
+local assert, geterrorhandler, xpcall = _G.assert, _G.geterrorhandler, _G.xpcall
+local type, pairs, unpack, insert, remove = _G.type, _G.pairs, _G.unpack, _G.table.insert, _G.table.remove
 
 local api = {}
 
