@@ -44,22 +44,17 @@ subscribed to the same message.
 There are multiple ways to subscribe to messages, and multiple listeners
 can be attached for the same message:
 
-- `Observer:Subscribe('NAME_OF_MESSAGE')` will call
-  `Observer:NAME_OF_MESSAGE()`
-- `Observer:Subscribe('NAME_OF_MESSAGE', funcref)` will call `funcref()`
-- `Observer:Subscribe('NAME_OF_MESSAGE', 'FunctionName')` will call
-  `Observer:FunctionName()`
-- `Observer:Subscribe('NAME_OF_MESSAGE', Object)` will call
-  `Object:NAME_OF_MESSAGE()`
-- `Observer:Subscribe('NAME_OF_MESSAGE', Object, 'FunctionName')` will
-  call `Object:FunctionName()`
+	Observer:Subscribe('NAME_OF_MESSAGE') -- calls Observer:NAME_OF_MESSAGE()
+	Observer:Subscribe('NAME_OF_MESSAGE', funcref) -- calls funcref()
+	Observer:Subscribe('NAME_OF_MESSAGE', 'FunctionName') -- calls Observer:FunctionName()
+	Observer:Subscribe('NAME_OF_MESSAGE', Object) -- calls Object:NAME_OF_MESSAGE()
+	Observer:Subscribe('NAME_OF_MESSAGE', Object, 'FunctionName') -- calls Object:FunctionName()
 
-The second, third and fourth version of attaching listeners can also be
+The second, third and fourth versions of attaching listeners can also be
 passed as a table, as shorthand for attaching listeners for multiple
 messages:
 
-- `Observer:Subscribe({NAME_OF_MESSAGE = funcref, OTHER_MESSAGE =
-  'FunctionName'})`
+	Observer:Subscribe({NAME_OF_MESSAGE = funcref, OTHER_MESSAGE = 'FunctionName'})
 
 The arguments passed to the listener are the arguments passed to the
 `Publish` function after the message name.
@@ -84,13 +79,12 @@ funcref)`.
 
 The possible ways to call this function:
 
-- `Observer:Unsubscribe('NAME_OF_MESSAGE')`
-- `Observer:Unsubscribe('NAME_OF_MESSAGE', funcref)`
-- `Observer:Unsubscribe('NAME_OF_MESSAGE', 'FunctionName')`
-- `Observer:Unsubscribe('NAME_OF_MESSAGE', Object)`
-- `Observer:Unsubscribe('NAME_OF_MESSAGE', Object, 'FunctionName')`
-- `Observer:Unsubscribe({NAME_OF_MESSAGE = funcref, OTHER_MESSAGE =
-  'FunctionName'})`
+	Observer:Unsubscribe('NAME_OF_MESSAGE')
+	Observer:Unsubscribe('NAME_OF_MESSAGE', funcref)
+	Observer:Unsubscribe('NAME_OF_MESSAGE', 'FunctionName')
+	Observer:Unsubscribe('NAME_OF_MESSAGE', Object)
+	Observer:Unsubscribe('NAME_OF_MESSAGE', Object, 'FunctionName')
+	Observer:Unsubscribe({NAME_OF_MESSAGE = funcref, OTHER_MESSAGE = 'FunctionName'})
 
 #### Parameters
 
